@@ -1,5 +1,6 @@
 'use client'
 
+// Ruby Earn Web App - Powered by Next.js & Supabase
 import { useState } from 'react'
 import Header from './components/Header'
 import BottomNav from './components/BottomNav'
