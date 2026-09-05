@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0010;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  max-width: 430px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@layer utilities {
+  .glow-pink {
+    box-shadow: 0 0 20px rgba(255, 24, 112, 0.3);
+  }
+  .glow-green {
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+  }
+  .card-bg {
+    background: linear-gradient(135deg, #1a0020 0%, #200028 100%);
+    border: 1px solid #3d0040;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0d0010;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF1870;
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes pulse-pink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-pink {
+  animation: pulse-pink 2s ease-in-out infinite;
+}
