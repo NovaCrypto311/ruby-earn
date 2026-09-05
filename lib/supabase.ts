@@ -10,8 +10,8 @@ export async function getBotConfig(keyName: string): Promise<string | null> {
   try {
     const { data, error } = await supabase
       .from('bot_config')
-      .select('value')
-      .eq('key', keyName)
+      .select('config_value')
+      .eq('config_key', keyName)
       .single()
 
     if (error) {
@@ -19,7 +19,7 @@ export async function getBotConfig(keyName: string): Promise<string | null> {
       return null
     }
 
-    return data?.value || null
+    return data?.config_value || null
   } catch (err) {
     console.error('Unexpected error fetching bot config:', err)
     return null
